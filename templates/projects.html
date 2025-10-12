@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+<h2>My Projects</h2>
+<div class="projects">
+  {% for project in projects %}
+  <div class="card">
+    <h3>{{ project.name }}</h3>
+    <p>{{ project.desc }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

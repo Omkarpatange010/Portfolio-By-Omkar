@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content %}
+<h2>Contact Me</h2>
+<form action="/contact" method="POST">
+  <input type="text" name="name" placeholder="Omkar Patange" required>
+  <input type="email" name="email" placeholder="omkarpatange77@gmail.com" required>
+  <input type="phone" name="phone" placeholder="9921765634" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <p class="flash">{{ messages[0] }}</p>
+  {% endif %}
+{% endwith %}
+{% endblock %}
