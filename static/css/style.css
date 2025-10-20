@@ -79,15 +79,328 @@ button:hover {
   text-align: center;
   margin-top: 10px;
 }
+.projects-section {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
 
-footer {
+.projects-heading {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333333;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Project Section Base */
+.projects-section {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+.projects-heading {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Uiverse Card Styles (adapted) */
+.card {
+  width: 100%;          /* make it fluid in grid */
+  height: auto;         /* adjust automatically for content */
+  background: #243137;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.card .border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #bd9f67;
+  opacity: 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.card .bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 6px;
+  text-transform: uppercase;
+  padding: 0px 5px 0px 8px;
+  color: #bd9f67;
+  background: #243137;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card .content {
+  padding: 1.5rem;       /* add some padding for content */
+  color: #fff;
+  text-align: left;
+  transition: all 0.5s ease-in-out;
+}
+
+.card .content .project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: #bd9f67;
+}
+.card .content .project-duration {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+  color: #c0b28d;
+}
+.card .content .project-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+.card .content .project-link a {
+  color: #bd9f67;
+  text-decoration: none;
+  font-weight: bold;
+}
+.card .content .project-link a:hover {
+  text-decoration: underline;
+}
+
+.card:hover {
+  border-radius: 0;
+  transform: scale(1.05);
+}
+
+.card:hover .border {
+  inset: 15px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.card:hover .bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+.projects-section {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.projects-heading {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Slider container */
+.projects-slider {
+  display: flex;
+  gap: 1.5rem;               /* spacing between cards */
+  padding: 0 1rem;           /* space at ends */
+  overflow-x: auto;          /* allow horizontal scroll */
+  scroll-snap-type: x mandatory; /* for smooth snapping */
+}
+
+/* Each slide/card */
+.projects-slider .project-card {
+  flex: 0 0 auto;            /* don't shrink, width based on content */
+  width: 300px;              /* you can adjust width */
+  scroll-snap-align: center; /* snaps the card to center when scrolling */
+}
+
+/* Optional: hide scrollbar on some browsers */
+.projects-slider::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 500px) {
+  .projects-slider .project-card {
+    width: 90%;               /* almost full width on mobile */
+  }
+}
+
+.projects-slider {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.footer {
   text-align: center;
   background: #333;
   color: white;
   padding: 15px 0;
   margin-top: 40px;
 }
-footer a {
+.footer a {
   color: #f06595;
   text-decoration: none;
 }
+/* Footer Section */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.footer h3 {
+  color: #f06595;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #f06595;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.certifications {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 900px;
+  height: 380px;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.swiper-slide img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #f06595;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f06595;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* Position the pagination dots below the slider */
+.swiper {
+  position: relative;
+  padding-bottom: 40px; /* adds space for pagination */
+}
+
+/* Pagination container positioning */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px; /* places dots below slides */
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Pagination bullet style */
+.swiper-pagination-bullet {
+  background: #ccc; /* inactive color */
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  transition: 0.3s ease;
+}
+
+/* Active bullet matches your accent color */
+.swiper-pagination-bullet-active {
+  background: #f06595 !important;
+  opacity: 1;
+  transform: scale(1.2);
+}
+ .contact-section {
+   padding: 2rem;
+   text-align: center;
+   background: #f5f5f5;
+   .your-selector 
+  
+
+ }
