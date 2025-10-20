@@ -47,6 +47,10 @@ def projects():
         {
             'title': 'Spotify & Netflix Clones',
             'desc': 'Built interactive UI clones of popular streaming platforms to enhance frontend skills using HTML, CSS, and JS.'
+        },
+        {
+            'title': 'My-Portfolio Suite ',
+            'desc': 'A full-stack portfolio website built using Flask, styled with modern CSS, integrated with email alerts, and hosted on AWS for scalability'
         }
     ]
     return render_template('projects.html', projects=projects)
