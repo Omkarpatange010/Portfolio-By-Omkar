@@ -7,39 +7,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
-@app.route('/login', methods=['GET','POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        action = request.form.get('action')
-        if action == 'login':
-            username = request.form.get('username')
-            password = request.form.get('password')
-            # (Validate credentials here)
-            if username == 'admin' and password == 'password':
-                return redirect(url_for('index'))
-            else:
-                error = 'Invalid username or password'
-        elif action == 'signup':
-            return redirect(url_for('signup'))
-        elif action == 'forgot':
-            return redirect(url_for('forgot_password'))
-    return render_template('login.html', error=error)
-
-@app.route('/signup')
-def signup():
-    return "Sign Up page here"
-
-@app.route('/forgot_password')
-def forgot_password():
-    return "Forgot Password page here"
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 
 app = Flask(__name__)

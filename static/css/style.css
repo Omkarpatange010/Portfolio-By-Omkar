@@ -80,46 +80,55 @@ button:hover {
   margin-top: 10px;
 }
 .projects-section {
-  padding: 2rem;
-  background-color: #f5f5f5;
+  padding: 50px;
+  text-align: center;
 }
 
 .projects-heading {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .project-card {
-  background-color: #ffffff;
-  padding: 1.8rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Project Section Base */
-.projects-section {
-  padding: 2rem;
-  background-color: #f5f5f5;
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
-.projects-heading {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333;
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
 }
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+
+.project-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
 }
+
+.bottom-text {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #007bff;
+}
+
 
 /* Uiverse Card Styles (adapted) */
 .card {
@@ -188,7 +197,7 @@ button:hover {
   font-weight: bold;
 }
 .card .content .project-link a:hover {
-  text-decoration: underline;
+  text-decoration: underline;         
 }
 
 .card:hover {
