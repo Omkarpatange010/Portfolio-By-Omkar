@@ -117,28 +117,22 @@ Then test by sending a message from the Contact page.
 
 ☁️ Cloud Hosting (AWS / Render)
 🟢 Deploy on AWS EC2:
+Create an EC2 instance (Ubuntu).
+SSH into your instance.
+Install Python and Flask:
 
-        Create an EC2 instance (Ubuntu).
-        SSH into your instance.
-        Install Python and Flask:
-
-sudo apt update<br>
-sudo apt install python3-pip<br>
-pip install flask flask-mail<br>
-Transfer your project files using SCP or Git clone.<br>
+        sudo apt update<br>
+        sudo apt install python3-pip<br>
+        pip install flask flask-mail<br>
+        Transfer your project files using SCP or Git clone.<br>
 
 ### Run the app: 
 python3 app.py<br>
 Access via EC2 public IP (http://<ec2-ip>:5000).
 
 ## Deploy on AWS EC2 :
-
 Push your code to GitHub.
-
 Login to AWS.com
-
-
 Create a new Web Service → connect GitHub repo → set start command:
-
-
 python app.py
+
