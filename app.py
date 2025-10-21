@@ -38,19 +38,27 @@ def projects():
     projects = [
         {
             'title': 'Photography Management System',
-            'desc': 'Developed a comprehensive photography management system using Flask and SQLite. Integrated AWS EC2 and CloudWatch for scalable hosting and monitoring.'
+            'Duration':'02/2025 - 05/2025',
+            'desc': 'Developed a comprehensive photography management system using Flask and SQLite. Integrated AWS EC2 and CloudWatch for scalable hosting and monitoring.',
+            'link': 'https://github.com/Omkarpatange010/Wedding-Photography'
         },
         {
             'title': 'Fashion Hub E-commerce Platform',
-            'desc': 'Created a responsive e-commerce site for fashion products with HTML, CSS, and JS — implemented cart and product management.'
+            'Duration':'06/2024 - 01/2025',
+            'desc': 'Created a responsive e-commerce site for fashion products with HTML, CSS, and JS — implemented cart and product management.',
+            'link': 'https://github.com/Omkarpatange010/omkar-devops-private-repo'
         },
         {
             'title': 'Spotify & Netflix Clones',
-            'desc': 'Built interactive UI clones of popular streaming platforms to enhance frontend skills using HTML, CSS, and JS.'
+            'Duration':'02/2025 - 05/2024',
+            'desc': 'Built interactive UI clones of popular streaming platforms to enhance frontend skills using HTML, CSS, and JS.',
+            'link': 'https://github.com/Omkarpatange010/spotify-clone-minimal/tree/main/Spotify'
         },
         {
             'title': 'My-Portfolio Suite ',
-            'desc': 'A full-stack portfolio website built using Flask, styled with modern CSS, integrated with email alerts, and hosted on AWS for scalability'
+            'Duration':'06/2025 - 10/2025',
+            'desc': 'A full-stack portfolio website built using Flask, styled with modern CSS, integrated with email alerts, and hosted on AWS for scalability',
+            'link': 'https://github.com/Omkarpatange010/Portfolio-By-Omkar'
         }
     ]
     return render_template('projects.html', projects=projects)

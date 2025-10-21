@@ -7,9 +7,11 @@
     <div class="project-card">
       <div class="card-content">
         <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-duration">{{ project.Duration }}</p>
         <p class="project-description">{{ project.desc }}</p>
+        <a href="{{ project.link }}" class="btn">View Project</a>
       </div>
-      <span class="bottom-text">My Work</span>
+      
     </div>
     {% endfor %}
   </div>
