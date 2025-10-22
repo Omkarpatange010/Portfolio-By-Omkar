@@ -1,182 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Omkar Patange | Portfolio</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block title %}Home | Omkar Patange{% endblock %}
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% block content %}
+<section class="intro">
+  <img src="{{ url_for('static', filename='img/IMG_1109.JPG') }}" alt="Profile">
+  <div class="intro-text">
+    <h2><i>Hello,👋  I'm Omkar Patange </i></h2>
+    <h2>Cloud & Web Developer</h2>
+    <p>AWS | Docker | JavaScript | CI/CD | HTML | CSS | DevOps | GitHub | GitLab | BitBucket</p>
+  </div>
+  
+</section>
 
-</head>
-
-<body>
-  <header>
-    <h1>Omkar Patange</h1>
-    <nav>
-      <a href="{{ url_for('home') }}">Home</a>
-      <a href="{{ url_for('projects') }}">Projects</a>
-      <a href="{{ url_for('blog') }}">Blog</a>
-      <a href="{{ url_for('contact') }}">Contact</a>
-    </nav>
-  </header>
-
-  <section class="intro">
-    <img src="{{ url_for('static', filename='img/IMG_1109.JPG') }}" alt="Profile">
-    <div class="intro-text">
-      <h2>Hello, I'm Omkar Patange👋</h2>
-      <h2>Cloud & Web Developer</h2>
-      <p>AWS | Docker | JavaScript | CI/CD | HTML | CSS | DevOps | GitHub | GitLab | BitBucket</p>
-    </div>
-          <h2>About Me</h2>
-    <p>I’m a passionate Python and Web Developer specializing in Flask, Django, and modern web technologies
-      & Cloud with a solid foundation in cloud computing, and DevOps practices. I am proficient in AWS services
-      and modern web technologies, having hands-on experience in both frontend
-      development and cloud deployments. I have a demonstrated ability to build scalable,
-      cloud-native applications while contributing to open-source projects and leading
-      technical initiatives, and I seek to leverage my expertise effectively in innovative cloud
-      engineering projects.</p>
-  </section>
-
-
-  <section class="certifications">
-    <h2>🏅 My Certifications</h2>
-
-    <!-- Swiper container -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/C.jpg') }}" alt="C Certification">
-          <h3>C Programming</h3>
-          <p>N-Infinity — 2024</p>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/Python.jpg') }}" alt="Python Certification">
-          <h3>Python for Beginners</h3>
-          <p>EduComp — 3-October-2024 To 10-December-2024</p>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/CPP.jpg') }}" alt="CPP Certification">
-          <h3>CPP Programming</h3>
-          <p> EduComp — 7-January-2024 To 22-February-2024</p>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/NodeJs.jpg') }}" alt="NodeJs Certification">
-          <h3>NodeJs Development</h3>
-          <p> EduComp — 25-February-2024 To 18-April-2024</p>
-        </div>
-
-        <!-- Slide 6 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/Java.jpg') }}" alt="Java Certification">
-          <h3>Java Programming</h3>
-          <p> EduComp — 21-July-2024 To 18-September-2024</p>
-        </div>
-        <!-- Slide 7 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/Adv-Java.jpg') }}" alt="NodeJs Certification">
-          <h3>Adv-Java Programming</h3>
-          <p> EduComp — 08-January-2025 To 11-March-2025</p>
-        </div>
-        <!-- Slide 8 -->
-        <div class="swiper-slide">
-          <img src="{{ url_for('static', filename='/img/NSS.jpg') }}" alt="NSS Voluntering">
-          <h3>NSS Voluntering</h3>
-          <p> Gover — 21-July-2022 To 18-September-2024</p>
-        </div>
+<section class="certifications">
+  <h2>🏅 My Certifications</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/C.jpg') }}" alt="C Certification">
+        <h3>C Programming</h3>
+        <p>N-Infinity — 2024</p>
       </div>
-   <!-- Swiper navigation -->
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Python.jpg') }}" alt="Python Certification">
+        <h3>Python for Beginners</h3>
+        <p>EduComp — 3-October-2024 to 10-December-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/CPP.jpg') }}" alt="CPP Certification">
+        <h3>CPP Programming</h3>
+        <p>EduComp — 7-January-2024 to 22-February-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/NodeJs.jpg') }}" alt="NodeJs Certification">
+        <h3>NodeJs Development</h3>
+        <p>EduComp — 25-February-2024 to 18-April-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Java.jpg') }}" alt="Java Certification">
+        <h3>Java Programming</h3>
+        <p>EduComp — 21-July-2024 to 18-September-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Adv-Java.jpg') }}" alt="Adv-Java Certification">
+        <h3>Adv-Java Programming</h3>
+        <p>EduComp — 08-January-2025 to 11-March-2025</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/NSS.jpg') }}" alt="NSS Volunteering">
+        <h3>NSS Volunteering</h3>
+        <p>Gover — 21-July-2022 to 18-September-2024</p>
+      </div>
+    </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
-    </div>
-
-
-
-  </section>
-  
- 
-
-  {% block content %}
-  <!-- Child templates will inject page-specific content here -->
-  {% endblock %}
-
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-info">
-        <h3>Contact</h3>
-        <p>📧 <a href="mailto:omkarpatange77@gmail.com">Email:-omkarpatange77@gmail.com</a></p>
-      </div>
-
-      <div class="footer-social">
-        <h3>Connect With Me</h3>
-        <div class="social-links">
-          <a href="https://github.com/Omkarpatange010" target="https://github.com/Omkarpatange010" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://bitbucket.org/omkarpatange/" target="_blank" title="Bitbucket">
-            <i class="fab fa-bitbucket"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/om-patange" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/omkar_patange__" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Omkar Patange | Built with Flask & Hosted With Cloud Technologies</p>
-
-    </div>
-  </footer>
-
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 30000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      slidesPerView: 1,
-      spaceBetween: 30,
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        }
-      }
-    });
-  </script>
-  
-
-
-
-</body>
-
-</html>
+  </div>
+</section>
+{% endblock %}

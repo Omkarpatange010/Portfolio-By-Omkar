@@ -1,5 +1,76 @@
-{% extends "index.html" %}
-{% block content %}
+{% extends "base.html" %}
 
- 
+{% block title %}Blog · My Portfolio{% endblock %}
+
+{% block content %}
+<section class="blog-intro">
+  <div class="about-card" onclick="this.classList.toggle('open');">
+    <div class="about-card-header">
+      <h2>About Me</h2>
+    </div>
+    <div class="about-card-body">
+      <p>
+        I’m a passionate Python and Web Developer specializing in Flask, Django, and modern web technologies. <br>
+        Cloud with a solid foundation in cloud computing, and DevOps practices. <br>
+        I am proficient in AWS services and modern web technologies, <br>
+        having hands-on experience in both frontend development and cloud deployments. <br>
+        I have a demonstrated ability to build scalable, cloud-native applications while contributing to open-source projects and leading technical initiatives. <br>
+        I seek to leverage my expertise effectively in innovative cloud engineering projects.<br>
+      </p>
+    </div>
+  </div>
+
+  <h1>Blog</h1>
+  <p>Welcome to my blog — a space where I share insights, updates and reflections from my journey.</p>
+</section>
+
+<section class="post-cards">
+  {% if posts %}
+    <div class="cards-grid">
+      {% for post in posts %}
+      <div class="blog-card" onclick="this.classList.toggle('open');">
+        <div class="blog-card-header">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <small class="card-date">Published on {{ post.date }}</small>
+        </div>
+        <div class="blog-card-body">
+          <p>{{ post.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts yet — check back soon!</p>
+  {% endif %}
+</section>
+
+<style>
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.blog-card-header {
+  padding: 1rem;
+  background: #f5f5f5;
+}
+.blog-card-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.blog-card.open .blog-card-body {
+  max-height: 400px;
+  padding: 1rem;
+}
+</style>
 {% endblock %}
