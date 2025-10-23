@@ -53,29 +53,29 @@ Ensures compatibility across all devices and browsers while maintaining readabil
 
 ## 📁 Project Structure
 
-Portfolio-By-Omkar/ <br>
-│ <br>
-├── app.py <br>
-├── requirements.txt<br>
-├── README.md<br>
-│<br>
-├── templates/<br>
-│   ├── index.html<br>
-│   ├── about.html<br>
-│   ├── projects.html<br>
-│   ├── contact.html<br>
-│   └── blog.html<br>
-│<br>
-├── static/<br>
-│   ├── css/<br>
-│   │   └── style.css<br>
-│   └── img/<br>
-│       ├── NodeJs.jpg<br>
-│       ├── Python.jpg<br>
-│       ├── AWS.jpg<br>
-│       └── profile.jpg<br>
-│
-└── messages.txt   (optional - stores contact messages)
+        Portfolio-By-Omkar/ <br>
+        │ <br>
+        ├── app.py <br>
+        ├── requirements.txt<br>
+        ├── README.md<br>
+        │<br>
+        ├── templates/<br>
+        │   ├── index.html<br>
+        │   ├── about.html<br>
+        │   ├── projects.html<br>
+        │   ├── contact.html<br>
+        │   └── blog.html<br>
+        │<br>
+        ├── static/<br>
+        │   ├── css/<br>
+        │   │   └── style.css<br>
+        │   └── img/<br>
+        │       ├── NodeJs.jpg<br>
+        │       ├── Python.jpg<br>
+        │       ├── AWS.jpg<br>
+        │       └── profile.jpg<br>
+        │
+        └── messages.txt   (optional - stores contact messages)
 
 ⚙️ Installation & Setup Steps
 Step 1: Clone the repository
@@ -135,4 +135,5 @@ Push your code to GitHub.
 Login to AWS.com
 Create a new Web Service → connect GitHub repo → set start command:
 python app.py
+
 
