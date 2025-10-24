@@ -35,7 +35,7 @@ Implemented using Swiper.js, a responsive and touch-friendly JavaScript library 
 The project can be easily deployed on AWS EC2, Render, or Vercel.
 Demonstrates your understanding of real-world hosting environments and scalable infrastructure setup.
 
-✅ Responsive and Simple Design
+## ✅ Responsive and Simple Design
 Designed with mobile-first principles using clean CSS.
 Ensures compatibility across all devices and browsers while maintaining readability and aesthetics.
 
