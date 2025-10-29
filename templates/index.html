@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Omkar Patange{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-container">
+    <!-- Left Section -->
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Omkar Patange</span> 👋</h1>
+      <h2>Cloud & Web Developer ☁️</h2>
+      <p>
+        Building scalable cloud infrastructures and modern web apps using 
+        <strong>AWS</strong>, <strong>Docker</strong>, <strong>CI/CD</strong>, and more.
+      </p>
+
+      <div class="tech-tags">
+        <span>AWS</span><span>Docker</span><span>CI/CD</span><span>JavaScript</span>
+        <span>DevOps</span><span>GitHub</span><span>GitLab</span><span>BitBucket</span>
+      </div>
+
+      <a href="#projects" class="hero-btn">🚀 Explore Projects</a>
+    </div>
+
+    <!-- Right Section -->
+    <div class="hero-image">
+      <div class="image-glow">
+        <img src="{{ url_for('static', filename='img/IMG_1109.JPG') }}" alt="Profile">
+      </div>
+      <div class="floating cloud1">☁️</div>
+      <div class="floating cloud2">☁️</div>
+      <div class="floating gear">⚙️</div>
+      <div class="floating web">🌐</div>
+    </div>
+  </div>
+</section>
+
+<section class="certifications">
+  <h2>🏅 My Certifications</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/C.jpg') }}" alt="C Certification">
+        <h3>C Programming</h3>
+        <p>N-Infinity — 2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Python.jpg') }}" alt="Python Certification">
+        <h3>Python for Beginners</h3>
+        <p>EduComp — 3-October-2024 to 10-December-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/CPP.jpg') }}" alt="CPP Certification">
+        <h3>CPP Programming</h3>
+        <p>EduComp — 7-January-2024 to 22-February-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/NodeJs.jpg') }}" alt="NodeJs Certification">
+        <h3>NodeJs Development</h3>
+        <p>EduComp — 25-February-2024 to 18-April-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Java.jpg') }}" alt="Java Certification">
+        <h3>Java Programming</h3>
+        <p>EduComp — 21-July-2024 to 18-September-2024</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/Adv-Java.jpg') }}" alt="Adv-Java Certification">
+        <h3>Adv-Java Programming</h3>
+        <p>EduComp — 08-January-2025 to 11-March-2025</p>
+      </div>
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='img/NSS.jpg') }}" alt="NSS Volunteering">
+        <h3>NSS Volunteering</h3>
+        <p>Gover — 21-July-2022 to 18-September-2024</p>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+{% endblock %}
