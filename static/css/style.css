@@ -5,6 +5,7 @@ body {
   color: #333;
 }
 
+<<<<<<< HEAD
 
 .hero {
   position: relative;
@@ -171,6 +172,12 @@ header {
   background: linear-gradient(90deg, #ff6b6b, #f06595);
   color: white;
   padding: 0rem 2rem;
+=======
+header {
+  background: linear-gradient(90deg, #ff6b6b, #f06595);
+  color: white;
+  padding: 1rem 2rem;
+>>>>>>> f70b830a8aa98755f76730ae2d539567bcf3eee7
   display: flex;
   justify-content: space-between;
   align-items: center;
