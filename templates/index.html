@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Omkar Patange{% endblock %}
+
+{% block content %}
+<section class="hero py-5 section-dark">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="hero-text text-center text-lg-start">
+          <h1 class="display-4 fw-bold mb-3 glamour-title">Hi, I'm <span class="text-primary">Omkar Patange</span> 👋</h1>
+          <h2 class="h3 mb-4 glamour-title">Cloud & Web Developer ☁️</h2>
+          <p class="lead mb-4">
+            Building scalable cloud infrastructures and modern web apps using 
+            <span>AWS</span>, <span>Docker</span>, <span>CI/CD</span>, and more.
+          </p>
+
+          <div class="tech-tags d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mb-4">
+            <span class="badge bg-light text-dark px-3 py-2">AWS</span>
+            <span class="badge bg-light text-dark px-3 py-2">Docker</span>
+            <span class="badge bg-light text-dark px-3 py-2">CI/CD</span>
+            <span class="badge bg-light text-dark px-3 py-2">JavaScript</span>
+            <span class="badge bg-light text-dark px-3 py-2">DevOps</span>
+            <span class="badge bg-light text-dark px-3 py-2">GitHub</span>
+            <span class="badge bg-light text-dark px-3 py-2">GitLab</span>
+            <span class="badge bg-light text-dark px-3 py-2">BitBucket</span>
+            <span class="badge bg-light text-dark px-3 py-2">Jenkins</span>
+            <span class="badge bg-light text-dark px-3 py-2">Flask</span>
+            <span class="badge bg-light text-dark px-3 py-2">Django</span>
+
+          </div>
+
+          <a href="{{ url_for('projects') }}" class="btn btn-primary btn-lg">🚀 Explore Projects</a>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="col-lg-6">
+        <div class="hero-image position-relative text-center">
+          <div class="profile-3d-container">
+            <div class="profile-3d-wrapper">
+              <div class="profile-3d-image">
+                <img src="{{ url_for('static', filename='img/profile.jpg') }}" 
+                     alt="Profile" 
+                     class="img-fluid">
+              </div>
+              <div class="profile-3d-glow"></div>
+              <div class="profile-3d-elements">
+                <span class="profile-emoji top-left">☁️</span>
+                <span class="profile-emoji top-right">🌐</span>
+                <span class="profile-emoji bottom-right">⚙️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-home-section section-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="about-header text-center mb-4">
+          <h2 class="glamour-title">About Me</h2>
+          <div class="tech-icons mb-3">
+            <i class="fab fa-python" data-tooltip="Python"></i>
+            <i class="fab fa-aws" data-tooltip="AWS"></i>
+            <i class="fab fa-docker" data-tooltip="Docker"></i>
+            <i class="fab fa-github" data-tooltip="GitHub"></i>
+            <i class="fab fa-react" data-tooltip="React"></i>
+          </div>
+        </div>
+        <div class="about-body text-center">
+          <p class="highlight-text mb-3">
+            I'm a passionate Python and Web Developer specializing in Flask, Django, and modern web technologies. I love building scalable cloud solutions and beautiful web apps.
+          </p>
+          <div class="skill-tags d-flex flex-wrap justify-content-center gap-2 mb-2">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">DevOps</span>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="skills-section mt-4 text-start">
+            <h3 class="glamour-title mb-3">What I Do</h3>
+            <ul class="list-unstyled ms-2">
+              <li><strong>Cloud Platforms:</strong> Amazon Web Services (AWS) – EC2, S3, Lambda, RDS, IAM, CloudWatch</li>
+              <li><strong>Web Development:</strong> HTML5, CSS3, JavaScript, Node.js, EJS, Flask (Python)</li>
+              <li><strong>DevOps / Infrastructure:</strong> Docker, Jenkins, Linux shell scripting, CI/CD pipelines</li>
+              <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
+              <li><strong>Databases & Storage:</strong> SQL, RDS</li>
+              <li><strong>Other Tools & Practices:</strong> Git, GitHub, Agile workflow, version control, monitoring & logging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 section-dark text-light" id="skills">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3 text-uppercase">🚀 What I Do</h2>
+    <p class="text-secondary mb-4">
+      A passionate cloud & DevOps enthusiast building scalable, secure, and modern solutions.
+    </p>
+
+    <!-- Skill Icons -->
+    <div class="d-flex flex-wrap justify-content-center mb-4">
+      <i class="fab fa-aws fa-2x mx-3 my-2" title="AWS Cloud"></i>
+      <i class="fab fa-docker fa-2x mx-3 my-2" title="Docker"></i>
+      <i class="fab fa-linux fa-2x mx-3 my-2" title="Linux"></i>
+      <i class="fab fa-python fa-2x mx-3 my-2" title="Python"></i>
+      <i class="fab fa-github fa-2x mx-3 my-2" title="GitHub"></i>
+      <i class="fab fa-jenkins fa-2x mx-3 my-2" title="Jenkins"></i>
+      <i class="fab fa-html5 fa-2x mx-3 my-2" title="HTML5"></i>
+      <i class="fab fa-css3-alt fa-2x mx-3 my-2" title="CSS3"></i>
+      <i class="fab fa-react fa-2x mx-3 my-2" title="React"></i>
+    </div>
+
+
+    <div class="mb-5">
+      <p class="lead lead-highlight">
+        I design and deploy highly interactive web apps, CI/CD pipelines, and secure AWS cloud infrastructures.
+        From frontend design to backend automation — I bridge development and operations.
+      </p>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="card h-100 shadow border-0 bg-secondary text-light">
+          <div class="card-body">
+            <h5 class="fw-bold">☁️ Cloud & DevOps</h5>
+            <p>Hands-on with AWS, EC2, S3, IAM, and CI/CD pipelines using Jenkins, Docker, and GitHub Actions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="card h-100 shadow border-0 bg-secondary text-light">
+          <div class="card-body">
+            <h5 class="fw-bold">💻 Full Stack Development</h5>
+            <p>Develop responsive applications with Flask, React, and modern UI/UX best practices.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="card h-100 shadow border-0 bg-secondary text-light">
+          <div class="card-body">
+            <h5 class="fw-bold">⚙️ Automation & Monitoring</h5>
+            <p>Automate deployments, monitor infrastructure using AWS CloudWatch and performance dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-light" id="academics">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">
+      <i class="fas fa-graduation-cap text-warning"></i> Academics
+    </h2>
+    <div class="timeline">
+    <!-- Education 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Master In Computer Application</h5>
+          <p class="text-muted mb-1"><i class="fas fa-school"></i>Dr.Sudhakarrao Jadhvar Institute of Management, Pune</p>
+          <p class="text-muted mb-1">Savitribai Phule Pune University</p>
+          <small class="text-secondary">Present: 2025</small>
+        </div>
+      </div>  
+
+    
+      <!-- Education 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Bachelor of Business Administration (Computer Application)</h5>
+          <p class="text-muted mb-1"><i class="fas fa-school"></i>Sinhgad College of Science, Pune</p>
+          <p class="text-muted mb-1">Savitribai Phule Pune University</p>
+          <small class="text-secondary">Graduated: 2025</small>
+        </div>
+      </div>
+
+      
+
+      <!-- Education 3 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5><i class="fas fa-school"></i> Modern Science College</h5>
+          <p class="text-muted mb-1">HSC,Latur</p>
+          <p class="text-muted mb-1">Maharashtra State Board of Higher Secondary Education</p>
+          <small class="text-secondary">Completed: 2017</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certifications py-5 bg-light">
+  <div class="container">
+  <h2 class="text-center mb-5 glamour-title">🏅 My Certifications</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/C.jpg') }}" 
+                 class="card-img-top" 
+                 alt="C Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">C Programming</h3>
+              <p class="card-text text-muted">N-Infinity — 2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/Python.jpg') }}" 
+                 class="card-img-top" 
+                 alt="Python Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">Python for Beginners</h3>
+              <p class="card-text text-muted">EduComp — 3-October-2024 to 10-December-2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/CPP.jpg') }}" 
+                 class="card-img-top" 
+                 alt="CPP Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">CPP Programming</h3>
+              <p class="card-text text-muted">EduComp — 7-January-2024 to 22-February-2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/NodeJs.jpg') }}" 
+                 class="card-img-top" 
+                 alt="NodeJs Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">NodeJs Development</h3>
+              <p class="card-text text-muted">EduComp — 25-February-2024 to 18-April-2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/Java.jpg') }}" 
+                 class="card-img-top" 
+                 alt="Java Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">Java Programming</h3>
+              <p class="card-text text-muted">EduComp — 21-July-2024 to 18-September-2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/Adv-Java.jpg') }}" 
+                 class="card-img-top" 
+                 alt="Adv-Java Certification">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">Adv-Java Programming</h3>
+              <p class="card-text text-muted">EduComp — 08-January-2025 to 11-March-2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{{ url_for('static', filename='img/NSS.jpg') }}" 
+                 class="card-img-top" 
+                 alt="NSS Volunteering">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 glamour-title">NSS Volunteering</h3>
+              <p class="card-text text-muted">Gover — 21-July-2022 to 18-September-2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev d-none d-md-flex"></div>
+      <div class="swiper-button-next d-none d-md-flex"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Initialize Swiper
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 30000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    breakpoints: {
+      576: { slidesPerView: 1 },  // Mobile
+      768: { slidesPerView: 2 },  // Tablet
+      1024: { slidesPerView: 3 }  // Desktop
+    }
+  });
+
+  // 3D Profile Image Effect
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.profile-3d-container');
+    const wrapper = document.querySelector('.profile-3d-wrapper');
+
+    if (container && wrapper) {
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 15;
+        const rotateX = ((centerY - e.clientY) / (rect.height / 2)) * 15;
+
+        wrapper.style.setProperty('--rotateX', rotateX);
+        wrapper.style.setProperty('--rotateY', rotateY);
+      });
+
+      container.addEventListener('mouseleave', () => {
+        wrapper.style.setProperty('--rotateX', 0);
+        wrapper.style.setProperty('--rotateY', 0);
+      });
+
+      // Add touch support for mobile devices
+      container.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const rotateY = ((touch.clientX - centerX) / (rect.width / 2)) * 15;
+        const rotateX = ((centerY - touch.clientY) / (rect.height / 2)) * 15;
+
+        wrapper.style.setProperty('--rotateX', rotateX);
+        wrapper.style.setProperty('--rotateY', rotateY);
+      });
+    }
+  });
+</script>
+{% endblock %}

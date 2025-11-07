@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="card shadow-lg border-0">
+        <div class="card-body p-4 p-md-5">
+          <h2 class="text-center mb-4 fw-bold glamour-title">Get in Touch ✉️</h2>
+          
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ messages[0] }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+          {% endwith %}
+
+          <form method="POST" action="/contact" class="needs-validation" novalidate>
+            <div class="mb-4">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+              <div class="invalid-feedback">
+                Please provide your name.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+              <div class="invalid-feedback">
+                Please provide a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control form-control-lg" id="message" name="message" rows="6" required></textarea>
+              <div class="invalid-feedback">
+                Please write your message.
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fas fa-paper-plane me-2"></i>Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Information Cards -->
+  <div class="row mt-5 g-4">
+    <!-- Email Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="h5 mb-2 glamour-title">Email</h3>
+          <p class="mb-0">
+            <a href="mailto:omkarpatange77@gmail.com" class="text-decoration-none">
+              omkarpatange77@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="h5 mb-2 glamour-title">Location</h3>
+          <p class="mb-0"> R1 Sector EWing 201, Life Republic By Kolte Patil, Marunji Gaon, Hinjewadi Phase 2
+R1 Sector EWing 201</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Card -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+            <i class="fas fa-share-alt"></i>
+          </div>
+          <h3 class="h5 mb-3 glamour-title">Social Media</h3>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="https://github.com/Omkarpatange010" target="_blank" class="text-dark fs-4" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://bitbucket.org/omkarpatange/" target="_blank" class="text-dark fs-4" title="Bitbucket">
+              <i class="fab fa-bitbucket"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/om-patange" target="_blank" class="text-dark fs-4" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/omkar_patange__" target="_blank" class="text-dark fs-4" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form Validation Script -->
+<script>
+(function () {
+  'use strict'
+
+  // Fetch all forms that need validation
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+{% endblock %}

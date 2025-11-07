@@ -1,0 +1,416 @@
+{% extends "base.html" %}
+
+{% block title %}Blog · My Portfolio{% endblock %}
+
+{% block content %}
+<section class="blog-intro">
+  <div class="glamorous-about-card reveal">
+    <div class="card-glass-effect"></div>
+    <div class="card-content">
+      <div class="about-header">
+        <div class="about-title">
+          <h2 class="text-gradient glamour-title">About Me</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="tech-icons">
+          <i class="fab fa-python" data-tooltip="Python"></i>
+          <i class="fab fa-aws" data-tooltip="AWS"></i>
+          <i class="fab fa-docker" data-tooltip="Docker"></i>
+          <i class="fab fa-github" data-tooltip="GitHub"></i>
+          <i class="fab fa-react" data-tooltip="React"></i>
+        </div>
+      </div>
+      
+      <div class="about-body">
+        <div class="about-text">
+          <p class="highlight-text">
+            I'm a passionate Python and Web Developer specializing in Flask, Django, and modern web technologies.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Cloud Computing</span>
+            <span class="skill-tag">DevOps</span>
+            <span class="skill-tag">Web Dev</span>
+          </div>
+          <div class="about-details">
+            <p>
+              With a solid foundation in cloud computing and DevOps practices, I bring expertise in:
+            </p>
+            <ul class="feature-list">
+              <li><span class="bullet">⚡</span> AWS Services & Cloud Architecture</li>
+              <li><span class="bullet">🚀</span> Frontend & Cloud Deployments</li>
+              <li><span class="bullet">🔧</span> Scalable Cloud-Native Applications</li>
+              <li><span class="bullet">🌟</span> Open-Source Contributions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-header reveal">
+  <h1 class="text-gradient glamour-title">Blog</h1>
+    <p class="welcome-text">Welcome to my blog — a space where I share insights, updates and reflections from my journey.</p>
+  </div>
+</section>
+
+<section class="post-cards">
+  {% if posts %}
+    <div class="cards-grid">
+      {% for post in posts %}
+      <div class="blog-card" onclick="this.classList.toggle('open');">
+        <div class="blog-card-header">
+          <h2 class="card-title glamour-title">{{ post.title }}</h2>
+          <small class="card-date">Published on {{ post.date }}</small>
+        </div>
+        <div class="blog-card-body">
+          <p>{{ post.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts yet — check back soon!</p>
+  {% endif %}
+</section>
+
+<style>
+/* Glamorous About Card Styles */
+.glamorous-about-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  margin: 2rem 0;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.4s ease-in-out;
+}
+
+.glamorous-about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.25);
+}
+
+.card-glass-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* About Header Styles */
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.about-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-2);
+  border-radius: 2px;
+}
+
+/* Tech Icons Styles */
+.tech-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.tech-icons i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tech-icons i:hover {
+  transform: translateY(-5px);
+  color: var(--secondary);
+}
+
+.tech-icons i[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-icons i:hover[data-tooltip]:before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Skill Tags Styles */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.skill-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--gradient-1);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Feature List Styles */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bullet {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  color: var(--primary);
+}
+
+/* Blog Header Styles */
+.blog-header {
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+
+.blog-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+/* Blog Card Styles */
+.blog-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1.5rem 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-header {
+  padding: 1.5rem;
+  background: var(--gradient-1);
+  color: white;
+}
+
+.blog-card-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card.open .blog-card-body {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .title-underline {
+    margin: 0 auto;
+  }
+
+  .skill-tags {
+    justify-content: center;
+  }
+
+  .feature-list li {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .glamorous-about-card {
+    padding: 1.5rem;
+  }
+
+  .about-title h2 {
+    font-size: 2rem;
+  }
+
+  .tech-icons i {
+    font-size: 1.5rem;
+  }
+
+  .blog-header h1 {
+    font-size: 2.5rem;
+  }
+}
+</style>
+<style>
+/* Glamorous About Card and Blog Card Styles (extended) */
+.glamorous-about-card { /* keep existing rules from global stylesheet */ }
+
+/* Cards grid for blog posts */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.blog-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(250,250,250,0.8));
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s;
+  position: relative;
+}
+
+.blog-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(37,99,235,0.02), rgba(244,63,94,0.02));
+  pointer-events: none;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(31,38,135,0.12);
+}
+
+.blog-card-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(90deg, rgba(37,99,235,1), rgba(79,70,229,1));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blog-card-header .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.blog-card-header .card-date {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.blog-card-body {
+  padding: 1.25rem 1.5rem;
+  color: var(--dark);
+  max-height: none;
+}
+
+.blog-card-body p {
+  margin: 0 0 1rem 0;
+  color: #334155;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: transparent;
+  border-radius: 999px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(37,99,235,0.15);
+}
+
+.read-more:hover {
+  background: var(--gradient-1);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.12);
+}
+
+/* If you want the collapse behaviour kept, use this (optional) */
+.blog-card-collapsible .blog-card-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.blog-card-collapsible.open .blog-card-body { max-height: 400px; }
+
+/* Small screens tweaks */
+@media (max-width: 600px) {
+  .blog-card-header { padding: 1rem; }
+  .blog-card-body { padding: 1rem; }
+}
+</style>
+{% endblock %}

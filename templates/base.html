@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Omkar Patange | Portfolio{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+  
+<body>
+  <!-- Change navbar theme by switching the class: navbar-theme-1 | navbar-theme-2 | navbar-theme-3 -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-theme-2">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('home') }}">Omkar Patange</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('portfolio') }}">Achievements</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="row">
+      <div class="col-12">
+        {% block content %}
+        <!-- Child templates inject content here -->
+        {% endblock %}
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h3 class="h5 glamour-title">Contact</h3>
+          <p class="mb-1">
+            <a href="mailto:omkarpatange77@gmail.com" class="text-light text-decoration-none">
+              <i class="fas fa-envelope me-2"></i>omkarpatange77@gmail.com
+            </a>
+          </p>
+          <p class="mb-1">
+            <a href="tel:+919921765634" class="text-light text-decoration-none">
+              <i class="fas fa-phone me-2"></i>+91 99217 65634
+            </a>
+          </p>
+          <address class="mb-0 text-light small">
+            <i class="fas fa-map-marker-alt me-2"></i>
+            R1 Sector EWing 201, Life Republic By Kolte Patil,
+            Marunji Gaon, Hinjewadi Phase 2<br>
+            R1 Sector EWing 201
+          </address>
+        </div>
+
+        <div class="col-md-6">
+          <h3 class="h5 glamour-title">Connect With Me</h3>
+          <div class="social-links">
+            <a href="https://github.com/Omkarpatange010" target="_blank" title="GitHub" class="text-light me-3">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="https://bitbucket.org/omkarpatange/" target="_blank" title="Bitbucket" class="text-light me-3">
+              <i class="fab fa-bitbucket fa-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/om-patange" target="_blank" title="LinkedIn" class="text-light me-3">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/omkar_patange__" target="_blank" title="Instagram" class="text-light me-3">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="mb-0">© 2025 Omkar Patange | Built with Flask & Hosted With Cloud Technologies</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- Scroll Reveal and Effects -->
+  <script>
+    // Scroll Reveal Effect
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    // Parallax Effect
+    function handleParallax() {
+      const parallaxElements = document.querySelectorAll('.parallax');
+      parallaxElements.forEach(element => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+        element.style.transform = `translate3d(0, ${rate}px, 0)`;
+      });
+    }
+
+    // Navbar Scroll Effect
+    function handleNavbarScroll() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.padding = '0.5rem 0';
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.padding = '1rem 0';
+        navbar.style.boxShadow = 'none';
+      }
+    }
+
+    // Initialize Swiper
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 30000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        576: { slidesPerView: 1 },  // Mobile
+        768: { slidesPerView: 2 },  // Tablet
+        1024: { slidesPerView: 3 }  // Desktop
+      }
+    });
+
+    // Event Listeners
+    window.addEventListener('scroll', () => {
+      revealOnScroll();
+      handleParallax();
+      handleNavbarScroll();
+    });
+    window.addEventListener('load', revealOnScroll);
+
+    // Add reveal class to elements
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('reveal');
+    });
+    document.querySelectorAll('.content-card').forEach(card => {
+      card.classList.add('reveal');
+    });
+  </script>
+</body>
+</html>
