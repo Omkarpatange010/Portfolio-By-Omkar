@@ -114,7 +114,6 @@ app.config['MAIL_DEFAULT_SENDER'] = ('Portfolio Contact', 'your_email@gmail.com'
 
 
 Then test by sending a message from the Contact page.
-
 ☁️ Cloud Hosting (AWS / Render)
 🟢 Deploy on AWS EC2:
 Create an EC2 instance (Ubuntu).
