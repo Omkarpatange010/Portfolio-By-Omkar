@@ -10,26 +10,37 @@ The application demonstrates modern web development practices along with optiona
 ✅ Home Page with Navigation
 A clean, responsive landing page that introduces the user to your portfolio.
 Includes an intuitive navigation bar linking to all major sections — About, Projects, Blog, and Contact.
+ ![Architechture](img/1.png)
+ ![Architechture](img/2.png)
+ ![Architechture](img/3.png)
+ ![Architechture](img/4.png)
+ ![Architechture](img/7.png)
 
 ✅ About Me Page
 Provides a detailed overview of your background, education, cloud expertise, and DevOps skills.
+![Architechture](img/9.png)
 Built as a separate HTML page using Flask routing (/about) to ensure modularity and scalability.
 
 ✅ Projects Showcase
 Displays your personal and academic projects with titles, short descriptions, and key technologies used.
 Each project entry demonstrates your practical skills in Flask, AWS, and web development.
+![Architechture](img/8.png)
 
 ✅ Blog Section
 A dynamic section where you can publish short technical articles or learning reflections.
 Helps you demonstrate your writing, documentation, and conceptual understanding of IT topics.
+![Architechture](img/10.png)
 
 ✅ Contact Form (with Email or File Storage Option)
 Interactive form for visitors to reach out directly.
 Uses Flask-Mail for automated email delivery or stores messages locally in a text file (messages.txt) as backup.
+![Architechture](img/11.png)
+
 
 ✅ Certification Section (with Swiper.js)
 Visually engaging slider to display professional certificates such as AWS, Python, and Node.js.
 Implemented using Swiper.js, a responsive and touch-friendly JavaScript library for smooth transitions.
+![Architechture](img/6.png)
 
 ✅ Cloud Deployment-Ready
 The project can be easily deployed on AWS EC2, Render, or Vercel.
@@ -94,6 +105,45 @@ pip install flask flask-mail
 Step 4: Run the Flask app
 python app.py
 
+## Email configuration & deployment checklist
+
+To make email sending work reliably in production, prefer using environment variables instead of hard-coded credentials. The app reads the following variables:
+
+- MAIL_SERVER (default: smtp.gmail.com)
+- MAIL_PORT (default: 587)
+- MAIL_USE_TLS (true/false, default: true)
+- MAIL_USE_SSL (true/false, default: false)
+- MAIL_USERNAME (your SMTP username / email)
+- MAIL_PASSWORD (your SMTP password or app password)
+- MAIL_DEFAULT_NAME (friendly sender name)
+- MAIL_DEFAULT_SENDER (sender email; defaults to MAIL_USERNAME)
+- MAIL_SUPPRESS_SEND (true/false, default: false — useful in CI/local)
+- CONTACT_RECIPIENT (optional override for contact form recipient)
+
+Notes and common pitfalls:
+
+- Gmail: enable 2-Step Verification and create an App Password; use that app password for `MAIL_PASSWORD`.
+- Some cloud hosts block outbound SMTP ports (25/465/587). If you deploy to a managed platform, verify outbound SMTP is allowed or use an email API (SendGrid, Mailgun, etc.).
+- Never commit MAIL_PASSWORD or other secrets to source control. Use the host's secret manager or set env vars via the platform UI/CLI.
+
+Local testing:
+
+- For quick local tests you can run a debug SMTP server (Python) and point MAIL_SERVER to localhost::
+
+```powershell
+# In one terminal (local debug SMTP server):
+python -m smtpd -c DebuggingServer -n localhost:1025
+
+# In another terminal set env vars and run app (PowerShell):
+$env:MAIL_SERVER='localhost'
+$env:MAIL_PORT='1025'
+$env:MAIL_SUPPRESS_SEND='False'
+python app.py
+```
+
+- The app also exposes a small protected test endpoint at `/_email_test` when debug is enabled. Use it to trigger a quick test email (only enable in local/dev).
+
+If you want me to configure a provider like SendGrid or add code to use Flask-Mailman (which works well with transactional email APIs), tell me which provider you prefer and I can wire it up.
 Step 5: Open in browser
 
 Go to → http://127.0.0.1:5000
