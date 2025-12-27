@@ -6,6 +6,8 @@ This project is a personal portfolio website built using the Flask framework (Py
 It showcases your skills, projects, certifications, blog, and includes a contact form integrated with email functionality.
 The application demonstrates modern web development practices along with optional cloud hosting using AWS EC2 .
 
+https://portfolio-by-om-497y.onrender.com/
+
 # 🧩 Features 
 ✅ Home Page with Navigation
 A clean, responsive landing page that introduces the user to your portfolio.
